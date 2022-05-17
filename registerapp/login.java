@@ -45,8 +45,6 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-                textView2.setText("Please Wait ......");
                 loginUser();
          }
         });
@@ -70,6 +68,8 @@ public class login extends AppCompatActivity {
             Toast.makeText(this,"Password must be greater than 6 letters",Toast.LENGTH_LONG).show();
             return;
         }
+        else
+            textView2.setText("Please Wait ......");
 
         auth.signInWithEmailAndPassword(userEmail,userPassword)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
